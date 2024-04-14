@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theme Popup</title>
+  <style>
+    /* Styling for the popup */
+    .popup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Button to trigger the popup -->
+<button onclick="togglePopup()">Theme</button>
+
+<!-- Popup content -->
+<div id="themePopup" class="popup">
+  <p>Select Theme:</p>
+  <button onclick="showNormalMode()">Normal Mode</button>
+  <button onclick="showGreyMode()">Grey Mode</button>
+</div>
+
+<!-- Pages for different themes -->
+<div id="normalModePage" style="display: none;">
+  <h1>Normal Mode Page</h1>
+  <!-- Content for normal mode -->
+</div>
+
+<div id="greyModePage" style="display: none;">
+  <h1>Grey Mode Page</h1>
+  <!-- Content for grey mode -->
+</div>
+
+<script>
+  function togglePopup() {
+    var popup = document.getElementById('themePopup');
+    if (popup.style.display === 'none') {
+      popup.style.display = 'block';
+    } else {
+      popup.style.display = 'none';
+    }
+  }
+
+  function showNormalMode() {
+    document.getElementById('normalModePage').style.display = 'block';
+    document.getElementById('greyModePage').style.display = 'none';
+    document.getElementById('themePopup').style.display = 'none';
+  }
+
+  function showGreyMode() {
+    document.getElementById('normalModePage').style.display = 'none';
+    document.getElementById('greyModePage').style.display = 'block';
+    document.getElementById('themePopup').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
